@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Média Aritmética</title>
+</head>
+<body>
+    <h1>Média Aritmética de 5 Números</h1>
+    <button onclick="calcularMedia()">Calcular Média</button>
+    <p id="resultado"></p>
+    
+    <script>
+        function calcularMedia() {
+            let soma = 0;
+
+            for (let i = 0; i < 5; i++) {
+                let numero = parseInt(prompt("Digite um número inteiro:"));
+                soma += numero;
+            }
+            
+            let media = soma / 5;
+            document.getElementById("resultado").innerText = "A média aritmética é: " + media.toFixed(2);
+        }
+    </script>
+</body>
+</html>

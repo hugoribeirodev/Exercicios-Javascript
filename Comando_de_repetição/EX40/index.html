@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sequência de Fibonacci</title>
+</head>
+<body>
+    <h1>Primeiros 20 Números da Sequência de Fibonacci</h1>
+    <button onclick="exibirFibonacci()">Mostrar Fibonacci</button>
+    <p id="resultado"></p>
+    
+    <script>
+        function exibirFibonacci() {
+            let fib1 = 0;
+            let fib2 = 1;
+            let resultado = fib1 + " " + fib2 + " ";
+
+            for (let i = 3; i <= 20; i++) {
+                let proximo = fib1 + fib2;
+                resultado += proximo + " ";
+                fib1 = fib2;
+                fib2 = proximo;
+            }
+            
+            document.getElementById("resultado").innerText = "Primeiros 20 números da sequência de Fibonacci: " + resultado;
+        }
+    </script>
+</body>
+</html>

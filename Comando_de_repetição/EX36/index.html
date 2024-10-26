@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divisores</title>
+</head>
+<body>
+    <h1>Divisores de um Número</h1>
+    <button onclick="exibirDivisores()">Mostrar Divisores</button>
+    <p id="resultado"></p>
+    
+    <script>
+        function exibirDivisores() {
+            let numero = parseInt(prompt("Digite um número inteiro positivo:"));
+            let divisores = "";
+
+            for (let i = 1; i <= numero; i++) {
+                if (numero % i === 0) {
+                    divisores += i + " ";
+                }
+            }
+            
+            document.getElementById("resultado").innerText = "Divisores de " + numero + ": " + divisores;
+        }
+    </script>
+</body>
+</html>
