@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soma de Números Pares</title>
+</head>
+<body>
+    <h1>Soma de Números Pares</h1>
+    <input type="number" id="numero" placeholder="Digite um número inteiro">
+    <button onclick="somarPares()">Calcular Soma</button>
+    <p id="resultado"></p>
+    
+    <script>
+        function somarPares() {
+            let num = parseInt(document.getElementById("numero").value);
+            let soma = 0;
+            let i = 1;
+
+            while (i <= num) {
+                if (i % 2 === 0) {
+                    soma += i;
+                }
+                i++;
+            }
+            document.getElementById("resultado").innerText = "A soma dos números pares até " + num + " é: " + soma;
+        }
+    </script>
+</body>
+</html>

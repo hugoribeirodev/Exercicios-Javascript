@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sequência de Fibonacci</title>
+</head>
+<body>
+    <h1>Sequência de Fibonacci</h1>
+    <input type="number" id="numero" placeholder="Digite um número inteiro">
+    <button onclick="mostrarFibonacci()">Mostrar Fibonacci</button>
+    <p id="resultado"></p>
+    
+    <script>
+        function mostrarFibonacci() {
+            let num = parseInt(document.getElementById("numero").value);
+            let fibo = [0, 1];
+            let i = 2;
+
+            while (fibo[i - 1] + fibo[i - 2] <= num) {
+                fibo[i] = fibo[i - 1] + fibo[i - 2];
+                i++;
+            }
+            document.getElementById("resultado").innerText = "Fibonacci até " + num + ": " + fibo.slice(0, i).join(", ");
+        }
+    </script>
+</body>
+</html>

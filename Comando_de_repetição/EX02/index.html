@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soma de 1 a 100</title>
+</head>
+<body>
+    <h1>Resultado da Soma de 1 a 100</h1>
+    <p id="resultado"></p>
+
+    <script>
+        let soma = 0;
+        let numero = 1;
+        while (numero <= 100) {
+            soma += numero;
+            numero++;
+        }
+        document.getElementById("resultado").textContent = "A soma é: " + soma;
+    </script>
+</body>
+</html>

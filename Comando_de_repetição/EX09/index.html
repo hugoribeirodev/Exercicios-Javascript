@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Média das Idades</title>
+</head>
+<body>
+    <h1>Média das Idades</h1>
+    <button onclick="calcularMedia()">Calcular Média</button>
+    <p id="resultado"></p>
+    
+    <script>
+        function calcularMedia() {
+            let totalIdade = 0;
+            let i = 0;
+
+            while (i < 5) {
+                let nome = prompt("Digite o nome da pessoa " + (i + 1) + ":");
+                let idade = parseInt(prompt("Digite a idade de " + nome + ":"));
+                totalIdade += idade;
+                i++;
+            }
+            let media = totalIdade / 5;
+            document.getElementById("resultado").innerText = "A média das idades é: " + media;
+        }
+    </script>
+</body>
+</html>
