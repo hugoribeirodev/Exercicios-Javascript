@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soma de Números</title>
+</head>
+<body>
+    <h1>Soma de Números</h1>
+    <button onclick="somarNumeros()">Somar Números</button>
+
+    <script>
+        function somarNumeros() {
+            let soma = 0;
+            let numero;
+
+            do {
+                numero = parseFloat(prompt("Digite um número (digite um número negativo para encerrar):"));
+                if (numero >= 0) {
+                    soma += numero;
+                }
+            } while (numero >= 0);
+
+            alert("A soma dos números digitados é: " + soma);
+        }
+    </script>
+</body>
+</html>

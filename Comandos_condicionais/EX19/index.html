@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversão de Dólar para Real</title>
+</head>
+<body>
+    <h1>Conversão de Dólar para Real</h1>
+    <button onclick="converterDolarParaReal()">Converter</button>
+
+    <script>
+        function converterDolarParaReal() {
+            let cotacaoDolar = parseFloat(prompt("Digite o valor da cotação do dólar (R$):"));
+            let quantidadeDolares = parseFloat(prompt("Digite a quantidade de dólares que você possui (US$):"));
+            let valorEmReais = cotacaoDolar * quantidadeDolares;
+            alert("O valor de " + quantidadeDolares + " dólares equivale a R$ " + valorEmReais.toFixed(2) + ".");
+        }
+    </script>
+</body>
+</html>

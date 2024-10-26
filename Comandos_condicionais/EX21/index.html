@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Prestações</title>
+</head>
+<body>
+    <h1>Cálculo de Prestações da Loja Mamão com Açúcar</h1>
+    <button onclick="calcularPrestacoes()">Calcular Prestação</button>
+
+    <script>
+        function calcularPrestacoes() {
+            let valorCompra = parseFloat(prompt("Digite o valor da compra (R$):"));
+            let valorPrestacao = valorCompra / 5;
+            alert("O valor das 5 prestações sem juros é: R$ " + valorPrestacao.toFixed(2) + " cada.");
+        }
+    </script>
+</body>
+</html>

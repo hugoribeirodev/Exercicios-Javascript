@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soma das Idades</title>
+</head>
+<body>
+    <h1>Calcule a Soma das Idades de 20 Pessoas</h1>
+    <button onclick="calcularSomaDasIdades()">Calcular Soma das Idades</button>
+
+    <script>
+        function calcularSomaDasIdades() {
+            let somaIdades = 0;
+            for (let i = 1; i <= 20; i++) {
+                let idade = parseInt(prompt("Digite a idade da pessoa " + i + ":"));
+                somaIdades += idade;
+            }
+            alert("A soma das idades das 20 pessoas é: " + somaIdades);
+        }
+    </script>
+</body>
+</html>

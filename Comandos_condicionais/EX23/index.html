@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contar Números em Faixas</title>
+</head>
+<body>
+    <h1>Contar Números em Faixas</h1>
+    <button onclick="contarNumeros()">Contar Números</button>
+
+    <script>
+        function contarNumeros() {
+            let contagem0a100 = 0;
+            let contagem101a200 = 0;
+            let contagemMaiorQue200 = 0;
+
+            for (let i = 1; i <= 20; i++) {
+                let numero = parseFloat(prompt("Digite o número " + i + ":"));
+                if (numero >= 0 && numero <= 100) {
+                    contagem0a100++;
+                } else if (numero >= 101 && numero <= 200) {
+                    contagem101a200++;
+                } else if (numero > 200) {
+                    contagemMaiorQue200++;
+                }
+            }
+
+            alert("Quantidade de números entre 0 e 100: " + contagem0a100 + "\n" +
+                  "Quantidade de números entre 101 e 200: " + contagem101a200 + "\n" +
+                  "Quantidade de números maiores que 200: " + contagemMaiorQue200);
+        }
+    </script>
+</body>
+</html>

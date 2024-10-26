@@ -3,22 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contar Números Maiores que 8</title>
+    <title>Contar Números entre 0 e 100</title>
 </head>
 <body>
-    <h1>Contar Números Maiores que 8</h1>
-    <button onclick="contarMaioresQueOito()">Contar</button>
+    <h1>Contar Números entre 0 e 100</h1>
+    <button onclick="contarNumerosEntreZeroEcem()">Contar</button>
 
     <script>
-        function contarMaioresQueOito() {
+        function contarNumerosEntreZeroEcem() {
             let contagem = 0;
             for (let i = 1; i <= 20; i++) {
                 let numero = parseFloat(prompt("Digite o número " + i + ":"));
-                if (numero > 8) {
+                if (numero >= 0 && numero <= 100) {
                     contagem++;
                 }
             }
-            alert("A quantidade de números maiores que 8 é: " + contagem);
+            alert("A quantidade de números entre 0 e 100 é: " + contagem);
         }
     </script>
 </body>

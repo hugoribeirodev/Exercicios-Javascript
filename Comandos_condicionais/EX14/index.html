@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soma de 10 Números</title>
+</head>
+<body>
+    <h1>Calcule a Soma de 10 Números</h1>
+    <button onclick="calcularSomaDeDezNumeros()">Calcular Soma</button>
+
+    <script>
+        function calcularSomaDeDezNumeros() {
+            let soma = 0;
+            for (let i = 1; i <= 10; i++) {
+                let numero = parseFloat(prompt("Digite o número " + i + ":"));
+                soma += numero;
+            }
+            alert("A soma dos 10 números é: " + soma);
+        }
+    </script>
+</body>
+</html>
