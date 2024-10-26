@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Média das Idades</title>
+</head>
+<body>
+    <h1>Média das Idades</h1>
+    <button onclick="lerIdades()">Adicionar Pessoas</button>
+    <p id="resultado"></p>
+    
+    <script>
+        function lerIdades() {
+            let idade;
+            let soma = 0;
+            let contagem = 0;
+            let nome;
+
+            do {
+                nome = prompt("Digite o nome da pessoa (ou 'fim' para encerrar):");
+                if (nome !== "fim") {
+                    idade = parseInt(prompt("Digite a idade de " + nome + ":"));
+                    soma += idade;
+                    contagem++;
+                }
+            } while (nome !== "fim");
+            
+            if (contagem > 0) {
+                let media = soma / contagem;
+                document.getElementById("resultado").innerText = "A média das idades é: " + media.toFixed(2);
+            } else {
+                document.getElementById("resultado").innerText = "Nenhuma idade foi informada.";
+            }
+        }
+    </script>
+</body>
+</html>

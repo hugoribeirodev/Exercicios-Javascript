@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divisores</title>
+</head>
+<body>
+    <h1>Divisores de um Número</h1>
+    <input type="number" id="numero" placeholder="Digite um número inteiro positivo">
+    <button onclick="exibirDivisores()">Mostrar Divisores</button>
+    <p id="resultado"></p>
+    
+    <script>
+        function exibirDivisores() {
+            let num = parseInt(document.getElementById("numero").value);
+            let i = 1;
+            let divisores = "";
+
+            if (num <= 0) {
+                document.getElementById("resultado").innerText = "Por favor, digite um número inteiro positivo.";
+                return;
+            }
+
+            do {
+                if (num % i === 0) {
+                    divisores += i + " ";
+                }
+                i++;
+            } while (i <= num);
+            
+            document.getElementById("resultado").innerText = "Divisores de " + num + ": " + divisores;
+        }
+    </script>
+</body>
+</html>
