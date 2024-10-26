@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Salários Mínimos</title>
+</head>
+<body>
+    <h1>Calculadora de Salários Mínimos</h1>
+    <button onclick="calcularSalariosMinimos()">Calcular</button>
+
+    <script>
+        function calcularSalariosMinimos() {
+            const salarioMinimo = 1212.00;
+            let salarioUsuario = parseFloat(prompt("Digite o valor do seu salário:"));
+            let quantidadeSalarios = salarioUsuario / salarioMinimo;
+            alert("Você ganha " + quantidadeSalarios.toFixed(2) + " salários mínimos.");
+        }
+    </script>
+</body>
+</html>

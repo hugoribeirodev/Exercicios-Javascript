@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ordenação de Valores</title>
+</head>
+<body>
+    <h1>Ordenar Três Valores</h1>
+    <button onclick="ordenarValores()">Ordenar Valores</button>
+
+    <script>
+        function ordenarValores() {
+            let a = parseFloat(prompt("Digite o valor A:"));
+            let b = parseFloat(prompt("Digite o valor B:"));
+            let c = parseFloat(prompt("Digite o valor C:"));
+
+            let valores = [a, b, c];
+
+            valores.sort(function(x, y) {
+                return y - x; // Para ordem descendente
+            });
+
+            alert("Valores em ordem descendente: " + valores.join(", "));
+        }
+    </script>
+</body>
+</html>

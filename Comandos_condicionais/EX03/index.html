@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Crédito Especial</title>
+</head>
+<body>
+    <h1>Cálculo de Crédito Especial da CEF</h1>
+    <button onclick="calcularCredito()">Calcular Crédito</button>
+
+    <script>
+        function calcularCredito() {
+            let saldoMedio = parseFloat(prompt("Digite o saldo médio do cliente:"));
+
+            let credito;
+
+            if (saldoMedio <= 1000) {
+                credito = 500;
+            } else if (saldoMedio <= 5000) {
+                credito = 1000;
+            } else if (saldoMedio <= 10000) {
+                credito = 2000;
+            } else {
+                credito = 5000;
+            }
+
+            alert("Saldo médio: R$ " + saldoMedio.toFixed(2) + "\nValor do crédito: R$ " + credito.toFixed(2));
+        }
+    </script>
+</body>
+</html>
