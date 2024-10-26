@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dígitos de um Número</title>
+</head>
+<body>
+    <h1>Dígitos de um Número</h1>
+    <input type="number" id="numero" placeholder="Digite um número inteiro">
+    <button onclick="exibirDigitos()">Mostrar Dígitos</button>
+    <p id="resultado"></p>
+    
+    <script>
+        function exibirDigitos() {
+            let num = parseInt(document.getElementById("numero").value);
+            let digitos = "";
+            let divisor = 10;
+
+            while (num > 0) {
+                let digito = num % divisor;
+                digitos = digito + " " + digitos;
+                num = Math.floor(num / divisor);
+            }
+            document.getElementById("resultado").innerText = "Dígitos: " + digitos.trim();
+        }
+    </script>
+</body>
+</html>
