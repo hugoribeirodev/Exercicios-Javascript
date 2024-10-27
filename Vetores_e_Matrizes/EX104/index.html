@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificar Matriz Simétrica</title>
+</head>
+<body>
+    <h1>Verifique se uma Matriz 3x3 é Simétrica</h1>
+    <button id="verificar">Verificar Matriz Simétrica</button>
+    <div id="resultado"></div>
+
+    <script>
+        const matriz = [];
+        let simetrica = true;
+
+        for (let i = 0; i < 3; i++) {
+            matriz[i] = [];
+            for (let j = 0; j < 3; j++) {
+                matriz[i][j] = parseInt(prompt(`Digite o valor para a posição [${i+1}][${j+1}] da matriz:`));
+            }
+        }
+
+        document.getElementById('verificar').onclick = function() {
+            for (let i = 0; i < 3; i++) {
+                for (let j = 0; j < 3; j++) {
+                    if (matriz[i][j] !== matriz[j][i]) {
+                        simetrica = false;
+                        break;
+                    }
+                }
+            }
+
+            if (simetrica) {
+                document.getElementById('resultado').innerHTML = "A matriz é simétrica.";
+            } else {
+                document.getElementById('resultado').innerHTML = "A matriz não é simétrica.";
+            }
+        }
+    </script>
+</body>
+</html>

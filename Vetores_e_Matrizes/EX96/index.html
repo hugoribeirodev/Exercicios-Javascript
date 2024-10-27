@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matriz 3x3</title>
+</head>
+<body>
+    <h1>Matriz 3x3</h1>
+    <div id="matriz"></div>
+    <button id="exibir">Exibir Matriz</button>
+    <div id="resultado"></div>
+
+    <script>
+        const matriz = [];
+        for (let i = 0; i < 3; i++) {
+            matriz[i] = [];
+            for (let j = 0; j < 3; j++) {
+                const valor = prompt(`Digite o valor para a posição [${i+1}][${j+1}]:`);
+                matriz[i][j] = parseInt(valor);
+            }
+        }
+
+        document.getElementById('exibir').onclick = function() {
+            let matrizFormatada = '';
+            for (let i = 0; i < 3; i++) {
+                matrizFormatada += matriz[i].join(' ') + '<br>';
+            }
+            document.getElementById('resultado').innerHTML = matrizFormatada;
+        }
+    </script>
+</body>
+</html>

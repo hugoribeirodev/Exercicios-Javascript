@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Média Ponderada</title>
+</head>
+<body>
+    <h1>Cálculo da Média Ponderada</h1>
+    <input type="number" id="nota1" placeholder="Digite a primeira nota (Peso 2)" min="0" max="10">
+    <input type="number" id="nota2" placeholder="Digite a segunda nota (Peso 3)" min="0" max="10">
+    <input type="number" id="nota3" placeholder="Digite a terceira nota (Peso 5)" min="0" max="10">
+    <button onclick="calcularMediaPonderada()">Calcular</button>
+    <p id="resultado"></p>
+
+    <script>
+        function calcularMediaPonderada() {
+            const nota1 = parseFloat(document.getElementById('nota1').value);
+            const nota2 = parseFloat(document.getElementById('nota2').value);
+            const nota3 = parseFloat(document.getElementById('nota3').value);
+            const mediaPonderada = ((nota1 * 2 + nota2 * 3 + nota3 * 5) / 10).toFixed(2);
+
+            document.getElementById('resultado').innerHTML = `Média Ponderada: ${mediaPonderada}`;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maior Valor na Matriz 3x3</title>
+</head>
+<body>
+    <h1>Encontre o Maior Valor na Matriz 3x3</h1>
+    <button id="encontrar">Encontrar Maior Valor</button>
+    <div id="resultado"></div>
+
+    <script>
+        const matriz = [];
+        let maiorValor;
+
+        for (let i = 0; i < 3; i++) {
+            matriz[i] = [];
+            for (let j = 0; j < 3; j++) {
+                const valor = prompt(`Digite o valor para a posição [${i+1}][${j+1}]:`);
+                matriz[i][j] = parseInt(valor);
+                if (i === 0 && j === 0) {
+                    maiorValor = matriz[i][j];
+                } else if (matriz[i][j] > maiorValor) {
+                    maiorValor = matriz[i][j];
+                }
+            }
+        }
+
+        document.getElementById('encontrar').onclick = function() {
+            document.getElementById('resultado').innerHTML = `O maior valor na matriz 3x3 é: ${maiorValor}`;
+        }
+    </script>
+</body>
+</html>

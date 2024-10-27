@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificar Aprovação</title>
+</head>
+<body>
+    <h1>Verificar Aprovação do Aluno</h1>
+    <input type="number" id="nota1" placeholder="Digite a primeira nota" step="0.01">
+    <input type="number" id="nota2" placeholder="Digite a segunda nota" step="0.01">
+    <input type="number" id="nota3" placeholder="Digite a terceira nota" step="0.01">
+    <button onclick="verificarAprovacao()">Verificar</button>
+    <p id="resultado"></p>
+
+    <script>
+        function verificarAprovacao() {
+            const nota1 = parseFloat(document.getElementById('nota1').value);
+            const nota2 = parseFloat(document.getElementById('nota2').value);
+            const nota3 = parseFloat(document.getElementById('nota3').value);
+            const media = (nota1 + nota2 + nota3) / 3;
+
+            const resultado = media >= 7 ? "Aprovado" : "Reprovado";
+            document.getElementById('resultado').innerHTML = `Média: ${media.toFixed(2)} - Status: ${resultado}`;
+        }
+    </script>
+</body>
+</html>

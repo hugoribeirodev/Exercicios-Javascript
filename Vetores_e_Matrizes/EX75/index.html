@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sequência de Fibonacci</title>
+</head>
+<body>
+    <h1>Primeiros 20 Números da Sequência de Fibonacci</h1>
+    <div id="resultado"></div>
+
+    <script>
+        let fibonacci = [0, 1];
+
+        for (let i = 2; i < 20; i++) {
+            fibonacci[i] = fibonacci[i - 1] + fibonacci[i - 2];
+        }
+
+        document.getElementById('resultado').innerHTML = "Os primeiros 20 números da sequência de Fibonacci são: " + fibonacci.join(", ");
+    </script>
+</body>
+</html>

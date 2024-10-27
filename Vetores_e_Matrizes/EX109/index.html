@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificar Matriz Identidade</title>
+</head>
+<body>
+    <h1>Verificar Matriz Identidade 3x3</h1>
+    <button id="verificar">Verificar Matriz</button>
+    <div id="resultado"></div>
+
+    <script>
+        const matriz = [];
+        
+        for (let i = 0; i < 3; i++) {
+            matriz[i] = [];
+            for (let j = 0; j < 3; j++) {
+                matriz[i][j] = parseInt(prompt(`Digite o valor para a posição [${i+1}][${j+1}]:`));
+            }
+        }
+
+        document.getElementById('verificar').onclick = function() {
+            let identidade = true;
+
+            for (let i = 0; i < 3; i++) {
+                for (let j = 0; j < 3; j++) {
+                    if (i === j && matriz[i][j] !== 1) {
+                        identidade = false;
+                    } else if (i !== j && matriz[i][j] !== 0) {
+                        identidade = false;
+                    }
+                }
+            }
+
+            const resultado = identidade ? 'A matriz é uma matriz identidade.' : 'A matriz não é uma matriz identidade.';
+            document.getElementById('resultado').innerHTML = resultado;
+        }
+    </script>
+</body>
+</html>

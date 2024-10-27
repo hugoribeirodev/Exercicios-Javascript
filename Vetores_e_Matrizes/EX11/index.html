@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo da Média Aritmética</title>
+</head>
+<body>
+    <h1>Cálculo da Média Aritmética</h1>
+    <input type="number" id="numero1" placeholder="Digite o primeiro número" step="0.01">
+    <input type="number" id="numero2" placeholder="Digite o segundo número" step="0.01">
+    <input type="number" id="numero3" placeholder="Digite o terceiro número" step="0.01">
+    <button onclick="calcularMediaAritmetica()">Calcular</button>
+    <p id="resultado"></p>
+
+    <script>
+        function calcularMediaAritmetica() {
+            const numero1 = parseFloat(document.getElementById('numero1').value);
+            const numero2 = parseFloat(document.getElementById('numero2').value);
+            const numero3 = parseFloat(document.getElementById('numero3').value);
+            const media = ((numero1 + numero2 + numero3) / 3).toFixed(2);
+
+            document.getElementById('resultado').innerHTML = `Média Aritmética: ${media}`;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dígitos de um Número</title>
+</head>
+<body>
+    <h1>Dígitos de um Número Inteiro</h1>
+    <input type="number" id="numero" placeholder="Digite um número inteiro">
+    <button id="exibir">Exibir Dígitos</button>
+    <div id="resultado"></div>
+
+    <script>
+        document.getElementById('exibir').onclick = function() {
+            const numero = document.getElementById('numero').value;
+            let digitos = '';
+
+            for (let i = 0; i < numero.length; i++) {
+                digitos += numero[i] + ' ';
+            }
+
+            document.getElementById('resultado').innerHTML = "Dígitos: " + digitos;
+        }
+    </script>
+</body>
+</html>

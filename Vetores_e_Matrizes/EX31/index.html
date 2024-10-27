@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantidade de Salários-Mínimos</title>
+</head>
+<body>
+    <h1>Salários-Mínimos Recebidos</h1>
+    <input type="number" id="salarioMinimo" placeholder="Digite o valor do salário-mínimo">
+    <input type="number" id="salarioFuncionario" placeholder="Digite o salário do funcionário">
+    <button onclick="calcularSalariosMinimos()">Calcular</button>
+    <p id="resultado"></p>
+
+    <script>
+        function calcularSalariosMinimos() {
+            const salarioMinimo = parseFloat(document.getElementById('salarioMinimo').value);
+            const salarioFuncionario = parseFloat(document.getElementById('salarioFuncionario').value);
+            const quantidadeSalarios = salarioFuncionario / salarioMinimo;
+
+            document.getElementById('resultado').innerHTML = `O funcionário recebe ${quantidadeSalarios.toFixed(2)} salários-mínimos.`;
+        }
+    </script>
+</body>
+</html>

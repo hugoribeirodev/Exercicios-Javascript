@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Círculo</title>
+</head>
+<body>
+    <h1>Área e Perímetro de um Círculo</h1>
+    <input type="number" id="raio" placeholder="Digite o raio do círculo">
+    <button onclick="calcularCirculo()">Calcular</button>
+    <p id="resultado"></p>
+
+    <script>
+        function calcularCirculo() {
+            const raio = parseFloat(document.getElementById('raio').value);
+            const area = (Math.PI * raio * raio).toFixed(2);
+            const perimetro = (2 * Math.PI * raio).toFixed(2);
+
+            document.getElementById('resultado').innerHTML = 
+                `Área: ${area} <br> Perímetro: ${perimetro}`;
+        }
+    </script>
+</body>
+</html>

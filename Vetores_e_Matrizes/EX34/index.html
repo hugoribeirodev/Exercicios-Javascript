@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificação de Voto</title>
+</head>
+<body>
+    <h1>Verificação de Voto</h1>
+    <input type="number" id="idade" placeholder="Digite a idade da pessoa">
+    <button onclick="verificarVoto()">Verificar</button>
+    <p id="resultado"></p>
+
+    <script>
+        function verificarVoto() {
+            const idade = parseInt(document.getElementById('idade').value);
+            let mensagem;
+
+            if (idade < 16) {
+                mensagem = "Não pode votar.";
+            } else if (idade >= 18 && idade <= 70) {
+                mensagem = "Voto obrigatório.";
+            } else {
+                mensagem = "Voto facultativo.";
+            }
+
+            document.getElementById('resultado').innerHTML = mensagem;
+        }
+    </script>
+</body>
+</html>

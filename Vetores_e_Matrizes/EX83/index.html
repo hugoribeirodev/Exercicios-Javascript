@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Média Aritmética</title>
+</head>
+<body>
+    <h1>Média Aritmética de 7 Números Inteiros</h1>
+    <div id="entrada">
+        <input type="number" id="numero" placeholder="Digite um número">
+        <button id="adicionar">Adicionar</button>
+    </div>
+    <button id="calcular">Calcular Média</button>
+    <div id="resultado"></div>
+
+    <script>
+        const numeros = [];
+        
+        document.getElementById('adicionar').onclick = function() {
+            const numero = parseInt(document.getElementById('numero').value);
+            if (!isNaN(numero) && numeros.length < 7) {
+                numeros.push(numero);
+                document.getElementById('numero').value = '';
+            }
+        }
+
+        document.getElementById('calcular').onclick = function() {
+            if (numeros.length === 7) {
+                const soma = numeros.reduce((acc, num) => acc + num, 0);
+                const media = soma / 7;
+                document.getElementById('resultado').innerHTML = "Média Aritmética: " + media.toFixed(2);
+            } else {
+                document.getElementById('resultado').innerHTML = "Por favor, adicione 7 números.";
+            }
+        }
+    </script>
+</body>
+</html>

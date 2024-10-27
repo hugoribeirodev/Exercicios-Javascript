@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Números em Ordem Decrescente</title>
+</head>
+<body>
+    <h1>Exibir Números em Ordem Decrescente</h1>
+    <div id="entrada">
+        <input type="number" id="numero" placeholder="Digite um número">
+        <button id="adicionar">Adicionar</button>
+    </div>
+    <button id="exibir">Exibir em Ordem Decrescente</button>
+    <div id="resultado"></div>
+
+    <script>
+        const numeros = [];
+
+        document.getElementById('adicionar').onclick = function() {
+            const numero = parseInt(document.getElementById('numero').value);
+            if (!isNaN(numero) && numeros.length < 5) {
+                numeros.push(numero);
+                document.getElementById('numero').value = '';
+            }
+        }
+
+        document.getElementById('exibir').onclick = function() {
+            if (numeros.length === 5) {
+                numeros.sort((a, b) => b - a);
+                document.getElementById('resultado').innerHTML = 
+                    `Números em ordem decrescente: ${numeros.join(', ')}`;
+            } else {
+                document.getElementById('resultado').innerHTML = "Por favor, adicione 5 números.";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Números Pares de 1 a 50</title>
+</head>
+<body>
+    <h1>Números Pares de 1 a 50</h1>
+    <button onclick="exibirPares()">Exibir Números Pares</button>
+    <p id="resultado"></p>
+
+    <script>
+        function exibirPares() {
+            let i = 2;
+            let numerosPares = "";
+
+            while (i <= 50) {
+                numerosPares += i + " ";
+                i += 2;
+            }
+
+            document.getElementById('resultado').innerHTML = numerosPares;
+        }
+    </script>
+</body>
+</html>

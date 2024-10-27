@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ordem Inversa</title>
+</head>
+<body>
+    <h1>Números em Ordem Inversa</h1>
+    <div id="entrada">
+        <input type="number" id="numero" placeholder="Digite um número">
+        <button id="adicionar">Adicionar</button>
+    </div>
+    <button id="exibir">Exibir Ordem Inversa</button>
+    <div id="resultado"></div>
+
+    <script>
+        const numeros = [];
+
+        document.getElementById('adicionar').onclick = function() {
+            const numero = parseInt(document.getElementById('numero').value);
+            if (!isNaN(numero)) {
+                numeros.push(numero);
+                document.getElementById('numero').value = '';
+            }
+        }
+
+        document.getElementById('exibir').onclick = function() {
+            let resultado = "Números em ordem inversa: " + numeros.reverse().join(', ');
+            document.getElementById('resultado').innerHTML = resultado;
+        }
+    </script>
+</body>
+</html>

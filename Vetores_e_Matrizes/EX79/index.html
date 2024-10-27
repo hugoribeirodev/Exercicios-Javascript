@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo do Fatorial</title>
+</head>
+<body>
+    <h1>Cálculo do Fatorial</h1>
+    <input type="number" id="numero" placeholder="Digite um número inteiro" min="0">
+    <button id="calcular">Calcular Fatorial</button>
+    <div id="resultado"></div>
+
+    <script>
+        document.getElementById('calcular').onclick = function() {
+            const numero = parseInt(document.getElementById('numero').value);
+            let fatorial = 1;
+
+            for (let i = 1; i <= numero; i++) {
+                fatorial *= i;
+            }
+
+            document.getElementById('resultado').innerHTML = "Fatorial de " + numero + " é: " + fatorial;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contagem de Números Positivos e Negativos</title>
+</head>
+<body>
+    <h1>Contagem de Números Positivos e Negativos</h1>
+    <div id="entrada">
+        <input type="number" id="numero" placeholder="Digite um número">
+        <button id="adicionar">Adicionar</button>
+    </div>
+    <button id="calcular">Calcular Contagem</button>
+    <div id="resultado"></div>
+
+    <script>
+        const numeros = [];
+        
+        document.getElementById('adicionar').onclick = function() {
+            const numero = parseInt(document.getElementById('numero').value);
+            if (!isNaN(numero) && numeros.length < 10) {
+                numeros.push(numero);
+                document.getElementById('numero').value = '';
+            }
+        }
+
+        document.getElementById('calcular').onclick = function() {
+            if (numeros.length === 10) {
+                const positivos = numeros.filter(num => num > 0).length;
+                const negativos = numeros.filter(num => num < 0).length;
+
+                document.getElementById('resultado').innerHTML = `
+                    Quantidade de números positivos: ${positivos}<br>
+                    Quantidade de números negativos: ${negativos}
+                `;
+            } else {
+                document.getElementById('resultado').innerHTML = "Por favor, adicione 10 números.";
+            }
+        }
+    </script>
+</body>
+</html>

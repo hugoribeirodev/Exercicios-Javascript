@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Valor com Desconto</title>
+</head>
+<body>
+    <h1>Calcular Valor Total com Desconto</h1>
+    <input type="number" id="preco" placeholder="Digite o preço do produto" step="0.01">
+    <input type="number" id="quantidade" placeholder="Digite a quantidade comprada">
+    <button onclick="calcularValorTotal()">Calcular</button>
+    <p id="resultado"></p>
+
+    <script>
+        function calcularValorTotal() {
+            const preco = parseFloat(document.getElementById('preco').value);
+            const quantidade = parseInt(document.getElementById('quantidade').value);
+            let valorTotal = preco * quantidade;
+            if (quantidade > 10) {
+                valorTotal *= 0.9;
+            }
+
+            document.getElementById('resultado').innerHTML = `Valor Total a Pagar: R$ ${valorTotal.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>

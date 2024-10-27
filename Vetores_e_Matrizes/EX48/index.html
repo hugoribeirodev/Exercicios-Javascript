@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dígitos de um Número</title>
+</head>
+<body>
+    <h1>Dígitos de um Número</h1>
+    <button onclick="exibirDigitos()">Exibir Dígitos</button>
+    <p id="resultado"></p>
+
+    <script>
+        function exibirDigitos() {
+            const numero = parseInt(prompt("Digite um número inteiro:"));
+            let digitos = "";
+            let temp = numero;
+
+            while (temp > 0) {
+                const digito = temp % 10;
+                digitos = digito + " " + digitos;
+                temp = Math.floor(temp / 10);
+            }
+
+            document.getElementById('resultado').innerHTML = `Dígitos de ${numero}: ${digitos}`;
+        }
+    </script>
+</body>
+</html>

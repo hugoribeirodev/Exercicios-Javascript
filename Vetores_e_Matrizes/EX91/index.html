@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soma de Números</title>
+</head>
+<body>
+    <h1>Soma de Números Positivos e Negativos</h1>
+    <div id="entrada">
+        <input type="number" id="numero" placeholder="Digite um número">
+        <button id="adicionar">Adicionar</button>
+    </div>
+    <button id="calcular">Calcular Soma</button>
+    <div id="resultado"></div>
+
+    <script>
+        const numeros = [];
+        
+        document.getElementById('adicionar').onclick = function() {
+            const numero = parseInt(document.getElementById('numero').value);
+            if (!isNaN(numero) && numeros.length < 10) {
+                numeros.push(numero);
+                document.getElementById('numero').value = '';
+            }
+        }
+
+        document.getElementById('calcular').onclick = function() {
+            if (numeros.length === 10) {
+                let somaPositivos = 0;
+                let somaNegativos = 0;
+
+                for (let i = 0; i < numeros.length; i++) {
+                    if (numeros[i] > 0) {
+                        somaPositivos += numeros[i];
+                    } else if (numeros[i] < 0) {
+                        somaNegativos += numeros[i];
+                    }
+                }
+
+                document.getElementById('resultado').innerHTML = 
+                    `Soma dos valores positivos: ${somaPositivos} <br>
+                    Soma dos valores negativos: ${somaNegativos}`;
+            } else {
+                document.getElementById('resultado').innerHTML = "Por favor, adicione 10 números.";
+            }
+        }
+    </script>
+</body>
+</html>

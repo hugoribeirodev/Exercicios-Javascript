@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Série de Fibonacci</title>
+</head>
+<body>
+    <h1>Série de Fibonacci</h1>
+    <button onclick="exibirFibonacci()">Exibir Fibonacci</button>
+    <div id="resultado"></div>
+
+    <script>
+        function exibirFibonacci() {
+            let numero = parseInt(prompt("Digite um número inteiro:"));
+            let a = 0, b = 1, proximo;
+            let resultado = "";
+
+            if (numero >= 0) {
+                do {
+                    resultado += a + " ";
+                    proximo = a + b;
+                    a = b;
+                    b = proximo;
+                } while (a <= numero);
+            }
+
+            document.getElementById('resultado').innerHTML = "Fibonacci até " + numero + ": " + resultado;
+        }
+    </script>
+</body>
+</html>

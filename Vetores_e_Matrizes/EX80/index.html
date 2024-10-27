@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Média das Idades</title>
+</head>
+<body>
+    <h1>Média das Idades</h1>
+    <div id="entrada">
+        <input type="text" id="nome" placeholder="Digite o nome">
+        <input type="number" id="idade" placeholder="Digite a idade" min="0">
+        <button id="adicionar">Adicionar</button>
+    </div>
+    <div id="resultado"></div>
+
+    <script>
+        let totalIdades = 0;
+        let contador = 0;
+
+        document.getElementById('adicionar').onclick = function() {
+            const nome = document.getElementById('nome').value;
+            const idade = parseInt(document.getElementById('idade').value);
+
+            if (nome.toLowerCase() === 'fim') {
+                if (contador > 0) {
+                    const media = totalIdades / contador;
+                    document.getElementById('resultado').innerHTML = "Média das idades: " + media.toFixed(2);
+                } else {
+                    document.getElementById('resultado').innerHTML = "Nenhuma idade foi informada.";
+                }
+                return;
+            }
+
+            totalIdades += idade;
+            contador++;
+
+            document.getElementById('nome').value = '';
+            document.getElementById('idade').value = '';
+        }
+    </script>
+</body>
+</html>

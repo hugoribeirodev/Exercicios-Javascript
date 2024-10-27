@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Dias de Vida</title>
+</head>
+<body>
+    <h1>Cálculo de Dias de Vida</h1>
+    <input type="number" id="anos" placeholder="Digite a idade em anos">
+    <input type="number" id="meses" placeholder="Digite a idade em meses">
+    <input type="number" id="dias" placeholder="Digite a idade em dias">
+    <button onclick="calcularDiasVida()">Calcular Dias de Vida</button>
+    <p id="resultado"></p>
+
+    <script>
+        function calcularDiasVida() {
+            const anos = parseInt(document.getElementById('anos').value);
+            const meses = parseInt(document.getElementById('meses').value);
+            const dias = parseInt(document.getElementById('dias').value);
+            const totalDias = (anos * 365) + (meses * 30) + dias;
+
+            document.getElementById('resultado').innerHTML = `Total de dias de vida: ${totalDias}`;
+        }
+    </script>
+</body>
+</html>

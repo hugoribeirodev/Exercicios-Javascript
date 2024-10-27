@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produto da Diagonal Secundária</title>
+</head>
+<body>
+    <h1>Produto dos Elementos da Diagonal Secundária</h1>
+    <button id="calcular">Calcular Produto</button>
+    <div id="resultado"></div>
+
+    <script>
+        const matriz = [];
+        let produto = 1;
+
+        for (let i = 0; i < 3; i++) {
+            matriz[i] = [];
+            for (let j = 0; j < 3; j++) {
+                matriz[i][j] = parseInt(prompt(`Digite o valor para a posição [${i+1}][${j+1}]:`));
+            }
+        }
+
+        document.getElementById('calcular').onclick = function() {
+            for (let i = 0; i < 3; i++) {
+                produto *= matriz[i][2 - i];
+            }
+
+            document.getElementById('resultado').innerHTML = `O produto dos elementos da diagonal secundária é: ${produto}`;
+        }
+    </script>
+</body>
+</html>

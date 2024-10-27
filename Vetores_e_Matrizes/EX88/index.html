@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Média de Números</title>
+</head>
+<body>
+    <h1>Cálculo da Média de Números</h1>
+    <div id="entrada">
+        <input type="number" id="numero" placeholder="Digite um número">
+        <button id="adicionar">Adicionar</button>
+    </div>
+    <button id="calcular">Calcular Médias</button>
+    <div id="resultado"></div>
+
+    <script>
+        const numeros = [];
+        
+        document.getElementById('adicionar').onclick = function() {
+            const numero = parseInt(document.getElementById('numero').value);
+            if (!isNaN(numero) && numeros.length < 5) {
+                numeros.push(numero);
+                document.getElementById('numero').value = '';
+            }
+        }
+
+        document.getElementById('calcular').onclick = function() {
+            if (numeros.length === 5) {
+                const pares = numeros.filter(num => num % 2 === 0);
+                const impares = numeros.filter(num => num % 2 !== 0);
+
+                const mediaPares = pares.length > 0 ? pares.reduce((a, b) => a + b) / pares.length : 0;
+                const mediaImpares = impares.length > 0 ? impares.reduce((a, b) => a + b) / impares.length : 0;
+
+                document.getElementById('resultado').innerHTML = `
+                    Média dos valores pares: ${mediaPares.toFixed(2)}<br>
+                    Média dos valores ímpares: ${mediaImpares.toFixed(2)}
+                `;
+            } else {
+                document.getElementById('resultado').innerHTML = "Por favor, adicione 5 números.";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Média Aritmética</title>
+</head>
+<body>
+    <h1>Média Aritmética de 5 Números</h1>
+    <div id="resultado"></div>
+
+    <script>
+        let soma = 0;
+        const quantidade = 5;
+
+        for (let i = 0; i < quantidade; i++) {
+            const numero = parseInt(prompt(`Digite o ${i + 1}º número inteiro:`));
+            soma += numero;
+        }
+
+        const media = soma / quantidade;
+        document.getElementById('resultado').innerHTML = `A média aritmética é: ${media}`;
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Números Pares</title>
+</head>
+<body>
+    <h1>Contagem de Números Pares</h1>
+    <div id="entrada">
+        <input type="number" id="numero" placeholder="Digite um número">
+        <button id="adicionar">Adicionar</button>
+    </div>
+    <button id="calcular">Calcular Pares</button>
+    <div id="resultado"></div>
+
+    <script>
+        const numeros = [];
+        
+        document.getElementById('adicionar').onclick = function() {
+            const numero = parseInt(document.getElementById('numero').value);
+            if (!isNaN(numero) && numeros.length < 5) {
+                numeros.push(numero);
+                document.getElementById('numero').value = '';
+            }
+        }
+
+        document.getElementById('calcular').onclick = function() {
+            if (numeros.length === 5) {
+                const pares = numeros.filter(num => num % 2 === 0);
+                document.getElementById('resultado').innerHTML = "Quantidade de números pares: " + pares.length;
+            } else {
+                document.getElementById('resultado').innerHTML = "Por favor, adicione 5 números.";
+            }
+        }
+    </script>
+</body>
+</html>

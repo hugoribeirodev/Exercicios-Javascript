@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subtração de Matrizes 2x2</title>
+</head>
+<body>
+    <h1>Subtração de Matrizes 2x2</h1>
+    <button id="calcular">Calcular Subtração</button>
+    <div id="resultado"></div>
+
+    <script>
+        const matrizA = [];
+        const matrizB = [];
+        const resultado = [];
+
+        for (let i = 0; i < 2; i++) {
+            matrizA[i] = [];
+            matrizB[i] = [];
+            for (let j = 0; j < 2; j++) {
+                matrizA[i][j] = parseInt(prompt(`Digite o valor para a matriz A na posição [${i+1}][${j+1}]:`));
+                matrizB[i][j] = parseInt(prompt(`Digite o valor para a matriz B na posição [${i+1}][${j+1}]:`));
+            }
+        }
+
+        document.getElementById('calcular').onclick = function() {
+            for (let i = 0; i < 2; i++) {
+                resultado[i] = [];
+                for (let j = 0; j < 2; j++) {
+                    resultado[i][j] = matrizA[i][j] - matrizB[i][j];
+                }
+            }
+
+            let resultadoTexto = 'Resultado da subtração:\n';
+            for (let i = 0; i < 2; i++) {
+                resultadoTexto += resultado[i].join(' ') + '\n';
+            }
+
+            document.getElementById('resultado').innerText = resultadoTexto;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificação de Matrizes Iguais</title>
+</head>
+<body>
+    <h1>Verificação de Matrizes 2x2</h1>
+    <button id="verificar">Verificar Matrizes</button>
+    <div id="resultado"></div>
+
+    <script>
+        const matriz1 = [];
+        const matriz2 = [];
+        let iguais = true;
+
+        for (let i = 0; i < 2; i++) {
+            matriz1[i] = [];
+            matriz2[i] = [];
+            for (let j = 0; j < 2; j++) {
+                matriz1[i][j] = parseInt(prompt(`Digite o valor para a posição [${i+1}][${j+1}] da matriz 1:`));
+            }
+        }
+
+        for (let i = 0; i < 2; i++) {
+            for (let j = 0; j < 2; j++) {
+                matriz2[i][j] = parseInt(prompt(`Digite o valor para a posição [${i+1}][${j+1}] da matriz 2:`));
+            }
+        }
+
+        document.getElementById('verificar').onclick = function() {
+            for (let i = 0; i < 2; i++) {
+                for (let j = 0; j < 2; j++) {
+                    if (matriz1[i][j] !== matriz2[i][j]) {
+                        iguais = false;
+                    }
+                }
+            }
+
+            const resultado = iguais ? "As matrizes são iguais." : "As matrizes são diferentes.";
+            document.getElementById('resultado').innerHTML = resultado;
+        }
+    </script>
+</body>
+</html>

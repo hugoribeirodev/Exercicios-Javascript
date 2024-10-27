@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soma dos Números de 1 a 100</title>
+</head>
+<body>
+    <h1>Soma dos Números de 1 a 100</h1>
+    <div id="resultado"></div>
+
+    <script>
+        let soma = 0;
+        for (let i = 1; i <= 100; i++) {
+            soma += i;
+        }
+        document.getElementById('resultado').innerHTML = "A soma dos números de 1 a 100 é: " + soma;
+    </script>
+</body>
+</html>

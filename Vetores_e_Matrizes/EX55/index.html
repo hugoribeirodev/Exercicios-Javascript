@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada</title>
+</head>
+<body>
+    <h1>Tabuada até o Décimo Valor</h1>
+    <button onclick="exibirTabuada()">Ver Tabuada</button>
+    <div id="resultado"></div>
+
+    <script>
+        function exibirTabuada() {
+            let numero = parseInt(prompt("Digite um número inteiro:"));
+            let contador = 1;
+            let resultadoHTML = `<h2>Tabuada do ${numero}:</h2>`;
+
+            do {
+                resultadoHTML += `${numero} x ${contador} = ${numero * contador}<br>`;
+                contador++;
+            } while (contador <= 10);
+
+            document.getElementById('resultado').innerHTML = resultadoHTML;
+        }
+    </script>
+</body>
+</html>

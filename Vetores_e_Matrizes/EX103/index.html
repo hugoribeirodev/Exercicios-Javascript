@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menor Valor em Matriz 3x3</title>
+</head>
+<body>
+    <h1>Encontre o Menor Valor em uma Matriz 3x3</h1>
+    <button id="calcular">Calcular Menor Valor</button>
+    <div id="resultado"></div>
+
+    <script>
+        const matriz = [];
+        let menorValor;
+
+        for (let i = 0; i < 3; i++) {
+            matriz[i] = [];
+            for (let j = 0; j < 3; j++) {
+                matriz[i][j] = parseInt(prompt(`Digite o valor para a posição [${i+1}][${j+1}] da matriz:`));
+                if (i === 0 && j === 0) {
+                    menorValor = matriz[i][j];
+                } else {
+                    if (matriz[i][j] < menorValor) {
+                        menorValor = matriz[i][j];
+                    }
+                }
+            }
+        }
+
+        document.getElementById('calcular').onclick = function() {
+            document.getElementById('resultado').innerHTML = `O menor valor da matriz é: ${menorValor}`;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trocar Valores</title>
+</head>
+<body>
+    <h1>Trocar Valores de Dois Números</h1>
+    <input type="number" id="num1" placeholder="Digite o primeiro número">
+    <input type="number" id="num2" placeholder="Digite o segundo número">
+    <button onclick="trocarValores()">Trocar</button>
+    <p id="resultado"></p>
+
+    <script>
+        function trocarValores() {
+            let num1 = parseInt(document.getElementById('num1').value);
+            let num2 = parseInt(document.getElementById('num2').value);
+            [num1, num2] = [num2, num1];
+
+            document.getElementById('resultado').innerHTML = `Primeiro número: ${num1} <br> Segundo número: ${num2}`;
+        }
+    </script>
+</body>
+</html>

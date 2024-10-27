@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soma das Colunas da Matriz</title>
+</head>
+<body>
+    <h1>Soma dos Elementos de Cada Coluna da Matriz 4x4</h1>
+    <button id="calcular">Calcular Soma das Colunas</button>
+    <div id="resultado"></div>
+
+    <script>
+        const matriz = [];
+        const somaColunas = [0, 0, 0, 0];
+
+        for (let i = 0; i < 4; i++) {
+            matriz[i] = [];
+            for (let j = 0; j < 4; j++) {
+                matriz[i][j] = parseInt(prompt(`Digite o valor para a posição [${i+1}][${j+1}] da matriz:`));
+            }
+        }
+
+        document.getElementById('calcular').onclick = function() {
+            for (let j = 0; j < 4; j++) {
+                for (let i = 0; i < 4; i++) {
+                    somaColunas[j] += matriz[i][j];
+                }
+            }
+
+            let resultado = "<h2>Soma dos Elementos de Cada Coluna:</h2><ul>";
+            for (let j = 0; j < 4; j++) {
+                resultado += `<li>Soma da Coluna ${j + 1}: ${somaColunas[j]}</li>`;
+            }
+            resultado += "</ul>";
+
+            document.getElementById('resultado').innerHTML = resultado;
+        }
+    </script>
+</body>
+</html>

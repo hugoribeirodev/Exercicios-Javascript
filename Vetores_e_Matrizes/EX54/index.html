@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Média Aritmética de Números</title>
+</head>
+<body>
+    <h1>Média Aritmética de 5 Números Inteiros</h1>
+    <button onclick="calcularMedia()">Calcular Média</button>
+    <p id="resultado"></p>
+
+    <script>
+        function calcularMedia() {
+            let soma = 0;
+            let contador = 0;
+            let numero;
+
+            do {
+                numero = parseInt(prompt(`Digite o ${contador + 1}º número inteiro:`));
+                soma += numero;
+                contador++;
+            } while (contador < 5);
+
+            const media = soma / contador;
+            document.getElementById('resultado').innerHTML = `A média aritmética é: ${media}`;
+        }
+    </script>
+</body>
+</html>

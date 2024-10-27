@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aposentadoria</title>
+</head>
+<body>
+    <h1>Verificar Aposentadoria</h1>
+    <input type="number" id="idade" placeholder="Digite sua idade">
+    <input type="text" id="sexo" placeholder="Digite M ou F">
+    <button onclick="verificarAposentadoria()">Verificar</button>
+    <p id="resultado"></p>
+
+    <script>
+        function verificarAposentadoria() {
+            const idade = parseInt(document.getElementById('idade').value);
+            const sexo = document.getElementById('sexo').value.toUpperCase();
+            let mensagem;
+
+            if (sexo === 'M') {
+                mensagem = idade >= 65 ? "Pode se aposentar." : "Não pode se aposentar.";
+            } else if (sexo === 'F') {
+                mensagem = idade >= 60 ? "Pode se aposentar." : "Não pode se aposentar.";
+            } else {
+                mensagem = "Sexo inválido. Digite M ou F.";
+            }
+
+            document.getElementById('resultado').innerHTML = mensagem;
+        }
+    </script>
+</body>
+</html>

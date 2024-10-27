@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Situação do Aluno</title>
+</head>
+<body>
+    <h1>Situação do Aluno</h1>
+    <input type="text" id="nome" placeholder="Digite o nome do aluno">
+    <input type="number" id="nota" placeholder="Digite a nota do aluno">
+    <button onclick="verificarSituacao()">Verificar Situação</button>
+    <p id="resultado"></p>
+
+    <script>
+        function verificarSituacao() {
+            const nome = document.getElementById('nome').value;
+            const nota = parseFloat(document.getElementById('nota').value);
+            let situacao;
+
+            if (nota >= 7) {
+                situacao = "Aprovado";
+            } else {
+                situacao = "Em recuperação";
+            }
+
+            document.getElementById('resultado').innerHTML = `${nome}: ${situacao}`;
+        }
+    </script>
+</body>
+</html>

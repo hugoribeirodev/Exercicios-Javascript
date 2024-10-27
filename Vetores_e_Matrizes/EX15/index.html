@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo do Novo Salário</title>
+</head>
+<body>
+    <h1>Cálculo do Novo Salário com Aumento</h1>
+    <input type="number" id="salario" placeholder="Digite o salário atual" step="0.01">
+    <button onclick="calcularNovoSalario()">Calcular Novo Salário</button>
+    <p id="resultado"></p>
+
+    <script>
+        function calcularNovoSalario() {
+            const salario = parseFloat(document.getElementById('salario').value);
+            const aumento = salario * 0.15;
+            const novoSalario = salario + aumento;
+
+            document.getElementById('resultado').innerHTML = `Novo salário: R$ ${novoSalario.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>

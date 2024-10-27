@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matriz 3x3 - Soma da Diagonal Principal</title>
+</head>
+<body>
+    <h1>Matriz 3x3 - Soma da Diagonal Principal</h1>
+    <button id="calcular">Calcular Soma</button>
+    <div id="resultado"></div>
+
+    <script>
+        const matriz = [];
+        let somaDiagonal = 0;
+
+        for (let i = 0; i < 3; i++) {
+            matriz[i] = [];
+            for (let j = 0; j < 3; j++) {
+                const valor = prompt(`Digite o valor para a posição [${i+1}][${j+1}]:`);
+                matriz[i][j] = parseInt(valor);
+                if (i === j) {
+                    somaDiagonal += matriz[i][j];
+                }
+            }
+        }
+
+        document.getElementById('calcular').onclick = function() {
+            document.getElementById('resultado').innerText = `A soma dos elementos da diagonal principal é: ${somaDiagonal}`;
+        }
+    </script>
+</body>
+</html>

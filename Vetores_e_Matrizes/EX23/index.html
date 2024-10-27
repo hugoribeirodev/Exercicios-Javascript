@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantidade de Dias do Mês</title>
+</head>
+<body>
+    <h1>Quantidade de Dias do Mês</h1>
+    <input type="text" id="mes" placeholder="Digite o nome do mês">
+    <button onclick="calcularDias()">Calcular Dias</button>
+    <p id="resultado"></p>
+
+    <script>
+        function calcularDias() {
+            const mes = document.getElementById('mes').value.toLowerCase();
+            let dias;
+
+            switch (mes) {
+                case 'janeiro':
+                case 'março':
+                case 'maio':
+                case 'julho':
+                case 'agosto':
+                case 'outubro':
+                case 'dezembro':
+                    dias = 31;
+                    break;
+                case 'abril':
+                case 'junho':
+                case 'setembro':
+                case 'novembro':
+                    dias = 30;
+                    break;
+                case 'fevereiro':
+                    dias = 28; // Considerando anos não bissextos
+                    break;
+                default:
+                    dias = "Mês inválido.";
+            }
+
+            document.getElementById('resultado').innerHTML = `Dias: ${dias}`;
+        }
+    </script>
+</body>
+</html>

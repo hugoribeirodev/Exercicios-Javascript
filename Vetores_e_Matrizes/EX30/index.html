@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcular Preço das Maçãs</title>
+</head>
+<body>
+    <h1>Preço Total das Maçãs</h1>
+    <input type="number" id="quantidade" placeholder="Digite o número de maçãs">
+    <button onclick="calcularPreco()">Calcular Preço</button>
+    <p id="resultado"></p>
+
+    <script>
+        function calcularPreco() {
+            const quantidade = parseInt(document.getElementById('quantidade').value);
+            let precoPorMaca;
+
+            if (quantidade < 12) {
+                precoPorMaca = 0.50;
+            } else {
+                precoPorMaca = 0.40;
+            }
+
+            const total = precoPorMaca * quantidade;
+            document.getElementById('resultado').innerHTML = `Valor total a pagar: R$ ${total.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>

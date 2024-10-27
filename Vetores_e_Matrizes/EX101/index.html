@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Média Aritmética da Matriz 4x4</title>
+</head>
+<body>
+    <h1>Média Aritmética da Matriz 4x4</h1>
+    <button id="calcular">Calcular Média</button>
+    <div id="resultado"></div>
+
+    <script>
+        const matriz = [];
+        let soma = 0;
+        const totalElementos = 4 * 4;
+
+        for (let i = 0; i < 4; i++) {
+            matriz[i] = [];
+            for (let j = 0; j < 4; j++) {
+                const valor = prompt(`Digite o valor para a posição [${i+1}][${j+1}]:`);
+                matriz[i][j] = parseInt(valor);
+                soma += matriz[i][j];
+            }
+        }
+
+        const media = soma / totalElementos;
+
+        document.getElementById('calcular').onclick = function() {
+            document.getElementById('resultado').innerHTML = `A média aritmética dos elementos da matriz 4x4 é: ${media}`;
+        }
+    </script>
+</body>
+</html>

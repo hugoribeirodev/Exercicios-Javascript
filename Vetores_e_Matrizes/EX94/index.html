@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Números Pares</title>
+</head>
+<body>
+    <h1>Exibir Números Pares</h1>
+    <div id="entrada">
+        <input type="number" id="numero" placeholder="Digite um número">
+        <button id="adicionar">Adicionar</button>
+    </div>
+    <button id="exibir">Exibir Números Pares</button>
+    <div id="resultado"></div>
+
+    <script>
+        const numeros = [];
+        const limite = 7;
+
+        document.getElementById('adicionar').onclick = function() {
+            const numero = parseInt(document.getElementById('numero').value);
+            if (!isNaN(numero) && numeros.length < limite) {
+                numeros.push(numero);
+                document.getElementById('numero').value = '';
+            }
+        }
+
+        document.getElementById('exibir').onclick = function() {
+            if (numeros.length === limite) {
+                const pares = numeros.filter(num => num % 2 === 0);
+                document.getElementById('resultado').innerHTML = 
+                    `Números pares: ${pares.join(', ')}`;
+            } else {
+                document.getElementById('resultado').innerHTML = "Por favor, adicione 7 números.";
+            }
+        }
+    </script>
+</body>
+</html>

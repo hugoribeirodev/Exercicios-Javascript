@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificar Números</title>
+</head>
+<body>
+    <h1>Verificar se Algum Número é Zero</h1>
+    <div id="entrada">
+        <input type="number" id="numero" placeholder="Digite um número">
+        <button id="adicionar">Adicionar</button>
+    </div>
+    <button id="verificar">Verificar</button>
+    <div id="resultado"></div>
+
+    <script>
+        const numeros = [];
+        
+        document.getElementById('adicionar').onclick = function() {
+            const numero = parseInt(document.getElementById('numero').value);
+            if (!isNaN(numero) && numeros.length < 5) {
+                numeros.push(numero);
+                document.getElementById('numero').value = '';
+            }
+        }
+
+        document.getElementById('verificar').onclick = function() {
+            if (numeros.length === 5) {
+                const temZero = numeros.includes(0);
+                document.getElementById('resultado').innerHTML = temZero 
+                    ? "Pelo menos um dos números é igual a zero." 
+                    : "Nenhum dos números é igual a zero.";
+            } else {
+                document.getElementById('resultado').innerHTML = "Por favor, adicione 5 números.";
+            }
+        }
+    </script>
+</body>
+</html>

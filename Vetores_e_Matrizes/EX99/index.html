@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soma de Matrizes 2x2</title>
+</head>
+<body>
+    <h1>Soma de Matrizes 2x2</h1>
+    <button id="calcular">Calcular Soma das Matrizes</button>
+    <div id="resultado"></div>
+
+    <script>
+        const matriz1 = [];
+        const matriz2 = [];
+        const somaMatriz = [];
+
+        for (let i = 0; i < 2; i++) {
+            matriz1[i] = [];
+            matriz2[i] = [];
+            somaMatriz[i] = [];
+            for (let j = 0; j < 2; j++) {
+                const valor1 = prompt(`Digite o valor para a matriz 1, posição [${i+1}][${j+1}]:`);
+                matriz1[i][j] = parseInt(valor1);
+                
+                const valor2 = prompt(`Digite o valor para a matriz 2, posição [${i+1}][${j+1}]:`);
+                matriz2[i][j] = parseInt(valor2);
+
+                somaMatriz[i][j] = matriz1[i][j] + matriz2[i][j];
+            }
+        }
+
+        document.getElementById('calcular').onclick = function() {
+            let resultado = 'Soma das Matrizes 2x2:<br>';
+            for (let i = 0; i < 2; i++) {
+                resultado += `[ ${somaMatriz[i][0]} , ${somaMatriz[i][1]} ]<br>`;
+            }
+            document.getElementById('resultado').innerHTML = resultado;
+        }
+    </script>
+</body>
+</html>

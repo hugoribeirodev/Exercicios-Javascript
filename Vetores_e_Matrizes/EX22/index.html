@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Bônus</title>
+</head>
+<body>
+    <h1>Cálculo do Bônus do Funcionário</h1>
+    <input type="number" id="salario" placeholder="Digite o salário" step="0.01">
+    <button onclick="calcularBonus()">Calcular Bônus</button>
+    <p id="resultado"></p>
+
+    <script>
+        function calcularBonus() {
+            const salario = parseFloat(document.getElementById('salario').value);
+            let bonus;
+
+            if (salario > 2000) {
+                bonus = salario * 0.10;
+            } else {
+                bonus = salario * 0.05;
+            }
+
+            document.getElementById('resultado').innerHTML = `Bônus: R$ ${bonus.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>

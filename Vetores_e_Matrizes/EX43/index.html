@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sequência de Fibonacci</title>
+</head>
+<body>
+    <h1>Sequência de Fibonacci</h1>
+    <button onclick="exibirFibonacci()">Exibir Fibonacci</button>
+    <p id="resultado"></p>
+
+    <script>
+        function exibirFibonacci() {
+            const numero = parseInt(prompt("Digite um número inteiro:"));
+            let a = 0, b = 1;
+            let fibonacci = "0 ";
+
+            while (b <= numero) {
+                fibonacci += b + " ";
+                const proximo = a + b;
+                a = b;
+                b = proximo;
+            }
+
+            document.getElementById('resultado').innerHTML = `Sequência de Fibonacci até ${numero}: ${fibonacci}`;
+        }
+    </script>
+</body>
+</html>
